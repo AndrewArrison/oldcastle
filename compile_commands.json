@@ -1,0 +1,32 @@
+[
+{
+  "directory": "E:/main/GameDev/echofall/bin",
+  "command": "E:\\main\\plsc\\mingw32\\bin\\c++.exe  @CMakeFiles/echofall.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -std=gnu++23 -o CMakeFiles\\echofall.dir\\src\\gfx\\game.cpp.obj -c E:\\main\\GameDev\\echofall\\src\\gfx\\game.cpp",
+  "file": "E:/main/GameDev/echofall/src/gfx/game.cpp",
+  "output": "CMakeFiles/echofall.dir/src/gfx/game.cpp.obj"
+},
+{
+  "directory": "E:/main/GameDev/echofall/bin",
+  "command": "E:\\main\\plsc\\mingw32\\bin\\c++.exe  @CMakeFiles/echofall.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -std=gnu++23 -o CMakeFiles\\echofall.dir\\src\\gfx\\shader.cpp.obj -c E:\\main\\GameDev\\echofall\\src\\gfx\\shader.cpp",
+  "file": "E:/main/GameDev/echofall/src/gfx/shader.cpp",
+  "output": "CMakeFiles/echofall.dir/src/gfx/shader.cpp.obj"
+},
+{
+  "directory": "E:/main/GameDev/echofall/bin",
+  "command": "E:\\main\\plsc\\mingw32\\bin\\c++.exe  @CMakeFiles/echofall.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -std=gnu++23 -o CMakeFiles\\echofall.dir\\src\\gfx\\window.cpp.obj -c E:\\main\\GameDev\\echofall\\src\\gfx\\window.cpp",
+  "file": "E:/main/GameDev/echofall/src/gfx/window.cpp",
+  "output": "CMakeFiles/echofall.dir/src/gfx/window.cpp.obj"
+},
+{
+  "directory": "E:/main/GameDev/echofall/bin",
+  "command": "E:\\main\\plsc\\mingw32\\bin\\gcc.exe  @CMakeFiles/echofall.dir/includes_C.rsp  -o CMakeFiles\\echofall.dir\\src\\glad.c.obj -c E:\\main\\GameDev\\echofall\\src\\glad.c",
+  "file": "E:/main/GameDev/echofall/src/glad.c",
+  "output": "CMakeFiles/echofall.dir/src/glad.c.obj"
+},
+{
+  "directory": "E:/main/GameDev/echofall/bin",
+  "command": "E:\\main\\plsc\\mingw32\\bin\\c++.exe  @CMakeFiles/echofall.dir/includes_CXX.rsp  -Wall -Wextra -Wpedantic -std=gnu++23 -o CMakeFiles\\echofall.dir\\src\\main.cpp.obj -c E:\\main\\GameDev\\echofall\\src\\main.cpp",
+  "file": "E:/main/GameDev/echofall/src/main.cpp",
+  "output": "CMakeFiles/echofall.dir/src/main.cpp.obj"
+}
+]
