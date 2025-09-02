@@ -1,7 +1,7 @@
 // ================================================
 // File: Game.cpp
 // Created on: 06-08-2025 20:21:07
-// Last modified: 15-08-2025 16:57:50
+// Last modified: 02-09-2025 18:08:33
 // Created by: Alwin R Ajeesh
 // ================================================
 #include "Game.hpp"
@@ -44,11 +44,11 @@ void Game::init() {
         throw std::runtime_error("Failed to create renderer\n");
     }
     Renderer::instance()->init(_renderer);
-    SDL_FRect prect = {100, 100, 32 * 1.5, 32 * 1.5};
-    player = new Player(&prect);
     _camera = {0, 0};
     tilemap = new Tilemap();
     tilemap->init();
+    SDL_FRect prect = {100, 100, 32 * 1.5, 32 * 1.5};
+    player = new Player(&prect, tilemap);
 
     _running = true;
 }

@@ -1,7 +1,7 @@
 // ================================================
 // File: Tilemap.cpp
 // Created on: 12-08-2025 11:12:36
-// Last modified: 28-08-2025 16:10:14
+// Last modified: 02-09-2025 17:58:31
 // Created by: Alwin R Ajeesh
 // ================================================
 #include <cstdio>
@@ -14,30 +14,27 @@
 #include "Tilemap.hpp"
 
 Tilemap::Tilemap() {}
-Tilemap::~Tilemap() {}
+Tilemap::~Tilemap() { _tiles.clear(); }
 
 void Tilemap::init() {
     _tiles.reserve(levelw * levelh);
-    //
     std::ifstream file("level.txt");
     for (int y = 0; y < levelh; y++) {
         for (int x = 0; x < levelw; x++) {
             Tile tile;
-            tile._pos.x = y;
-            tile._pos.y = x;
             int type;
             file >> type;
+
+            tile._pos.x = x;
+            tile._pos.y = y;
             tile._type = type;
-            // printf("%d", type);
 
             _tiles.push_back(tile);
         }
     }
-    // Tile tile;
-    // tile._pos = {1, 1};
-    // tile._type = 2;
-    // _tiles.push_back(tile);
+    file.close();
 }
+
 void Tilemap::render(SDL_FPoint *camera) {
     for (const Tile &tile : _tiles) {
         rect = {((tile._pos.x * tilesize) - camera->x), ((tile._pos.y * tilesize) - camera->y), tilesize, tilesize};
@@ -45,33 +42,26 @@ void Tilemap::render(SDL_FPoint *camera) {
         if (rect.x + 32 < -32 || rect.y + 32 < 0 || rect.x > _vieww || rect.y > _viewh) {
             continue;
         }
-
+        sourceRect.x = 0;
+        sourceRect.y = 0;
         switch (tile._type) {
-            sourceRect.x = 0;
-            sourceRect.y = 0;
-            // TODO reader adter seting srxrect
         case 0:
-            sourceRect.x = 9 * 32;
-            sourceRect.y = 0;
-            // Renderer::instance()->renderrect(rect.x, rect.y, tilesize, tilesize, 255, 0, 0);
+            continue;
             break;
         case 1:
-            // sourceRect.x = 8 * 32;
-            // sourceRect.y = 0;
-            sourceRect.x = 8 * 32;
+            sourceRect.x = 9 * 32;
             sourceRect.y = 0;
-            Renderer::instance()->renderrect(rect.x, rect.y, tilesize, tilesize, 0, 255, 0);
             break;
         case 2:
-            // sourceRect.x = 9 * 32;
-            // sourceRect.y = 1 * 32;
+            Renderer::instance()->renderrect(rect.x, rect.y, tilesize, tilesize, 255, 0, 0);
             break;
         default:
-            Renderer::instance()->renderrect(rect.x, rect.y, tilesize, tilesize, 0, 0, 250);
-            sourceRect.x = 9 * 32;
-            sourceRect.y = 1 * 32;
+            sourceRect.x = 0;
+            sourceRect.y = 0;
             break;
         }
-        // Renderer::instance()->rendertexture(&rect, &sourceRect);
+        Renderer::instance()->rendertexture(&rect, &sourceRect);
     }
 }
+
+int Tilemap::getTile(float x, float y) { return 0; }
