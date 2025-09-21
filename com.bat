@@ -1,8 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set INCLUDE_DIR=E:\main\plsc\mingw32\include
-set LIB_DIR=E:\main\plsc\mingw32\lib
+set INCLUDE_DIR=C:\Softwares\mingw64\include
+set LIB_DIR=C:\Softwares\mingw64\lib
 
 :: Create folders if they don't exist
 if not exist obj mkdir obj
